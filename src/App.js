@@ -31,7 +31,7 @@ function App() {
         </Route>
 
         {/* <Route path="LR" element={<Sheet />} /> */}
-         <Route path="LR" element={<InvoiceForm />} />
+         <Route path="GenerateBill" element={<InvoiceForm />} />
 
            <Route path="upload" element={<UploadCSV />} />
 

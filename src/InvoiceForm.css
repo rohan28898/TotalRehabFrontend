@@ -1,0 +1,99 @@
+.invoice-container {
+  width: 720px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #000;
+  font-family: Arial, sans-serif;
+  background: #fff;
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid #000;
+  padding-bottom: 5px; /* smaller padding */
+  gap: 10px; /* space between logo and text */
+}
+
+.logo {
+  width: 80px;
+  height: auto;
+  margin: 0; /* remove extra spacing */
+}
+
+.header-text {
+  flex: 1;
+  text-align: left; /* align text closer to logo */
+  line-height: 1.1; /* tighter lines */
+}
+
+.header-text h2,
+.header-text p {
+  margin: 0; /* remove default margins */
+  padding: 0;
+}
+
+.header-text h2 {
+  font-size: 30px;
+  font-weight: bold;
+  margin-left: 30px;
+
+}
+
+.subtitle {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.address,
+.contact {
+  font-size: 15px; /* slightly smaller for compact layout */
+}
+
+/* FORM ROWS */
+.row {
+  display: grid;
+  grid-template-columns: 140px 1fr 120px 1fr;
+  align-items: center;
+  column-gap: 10px;
+  margin: 12px 0;
+}
+
+.row label {
+  font-size: 14px;
+}
+
+.row input {
+  border: none;
+  border-bottom: 1px solid #000;
+  outline: none;
+  width: 100%;
+  font-size: 14px;
+}
+
+.span-3 {
+  grid-column: span 3;
+}
+
+/* SUBMIT BUTTON */
+.submit-row {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.submit-row button {
+  padding: 10px 25px;
+  font-size: 14px;
+  cursor: pointer;
+  border: 1px solid #000;
+  background: #000;
+  color: #fff;
+}
+
+/* FOOTER */
+.footer {
+  margin-top: 40px;
+  text-align: right;
+  font-weight: bold;
+}

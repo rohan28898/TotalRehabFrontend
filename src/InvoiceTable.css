@@ -1,0 +1,170 @@
+.invoice-table-container {
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fefefe;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-family: Arial, sans-serif;
+}
+
+.invoice-table-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.date-filter {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.date-filter label {
+  font-weight: bold;
+  color: #555;
+}
+
+.date-filter input[type="date"] {
+  padding: 5px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.date-filter button {
+  padding: 6px 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.date-filter button:hover {
+  background-color: #0056b3;
+}
+
+.invoice-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.invoice-table th,
+.invoice-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.invoice-table th {
+  background-color: #007bff;
+  color: white;
+}
+
+.invoice-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.invoice-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.invoice-table td {
+  color: #333;
+}
+
+/* Filters */
+.filter-container {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.date-filter input,
+.name-filter input {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Table head sorting visual */
+.invoice-table th {
+  cursor: pointer;
+  background: #007bff;
+  color: white;
+  padding: 10px;
+  user-select: none;
+}
+
+.invoice-table th:hover {
+  background: #0056b3;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  padding: 6px 10px;
+  border: 1px solid #007bff;
+  background: white;
+  color: #007bff;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.pagination button.active-page,
+.pagination button:hover {
+  background: #007bff;
+  color: white;
+}
+
+/* Action buttons container */
+.invoice-table td button {
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* SAVE button */
+.invoice-table td button:first-child {
+  background-color: #28a745; /* green */
+  color: #fff;
+}
+
+.invoice-table td button:first-child:hover {
+  background-color: #218838;
+}
+
+/* PRINT button */
+.invoice-table td button:last-child {
+  background-color: #007bff; /* blue */
+  color: #fff;
+}
+
+.invoice-table td button:last-child:hover {
+  background-color: #0069d9;
+}
+
+/* Space between buttons */
+.invoice-table td button + button {
+  margin-left: 6px;
+}
+
+/* Disabled state (optional) */
+.invoice-table td button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+

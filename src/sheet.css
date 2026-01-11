@@ -1,0 +1,19 @@
+
+.bootstrap-overrides{
+
+    text-align: left;
+}
+.myclass{
+  height: 90%;
+}
+* {
+  /* background-color: rgb(241 93 182); */
+}
+background-color: rgb(0, 0, 0);
+
+.input-group-text,.form-control{
+  /* background-color: rgb(241 93 182); */
+  background-color: rgb(0, 0, 0);
+
+}
+

@@ -2,7 +2,8 @@ import { useState } from "react";
 import axios from "axios";
 import "./InvoiceForm.css";
 import logo from "./logo.jpg";
-
+import { BASE_URL } from "./api.js";
+//console.log('base=='+BASE_URL);
 const InvoiceForm = () => {
   const [formData, setFormData] = useState({
     invoiceNo: "",
@@ -90,7 +91,7 @@ const InvoiceForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:3001/invoice", formData);
+      const res = await axios.post(BASE_URL+"/invoice", formData);
       alert("Invoice saved successfully!");
       console.log(res.data);
     } catch (error) {

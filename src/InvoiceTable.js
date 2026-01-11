@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./InvoiceTable.css";
+import { BASE_URL } from "./api.js";
 
 const InvoiceTable = () => {
   const navigate = useNavigate();
@@ -20,7 +21,7 @@ const InvoiceTable = () => {
 
   const fetchInvoices = async () => {
     try {
-      let url = "http://localhost:3001/invoices";
+      let url = BASE_URL+"/invoices";
       let queryParams = [];
 
       if (startDate && endDate) {
@@ -101,7 +102,7 @@ const InvoiceTable = () => {
 
   const handleSave = async (invoice) => {
     try {
-      await axios.put(`http://localhost:3001/invoice/${invoice.id}`, {
+      await axios.put(BASE_URL+`/invoice/${invoice.id}`, {
         paymentMode: invoice.paymentMode,
         paymentStatus: invoice.paymentStatus
       });

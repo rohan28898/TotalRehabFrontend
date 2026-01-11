@@ -1,29 +1,49 @@
-import { Outlet, Link } from "react-router-dom";
-import { useLocation } from "react-router-dom";
-const Layout = () => {
-    const withouSidebarRoutes = ["404", "/LR", "/etc"];
+import { Outlet, Link, useLocation, useNavigate } from "react-router-dom";
 
-    // const { pathname } = useLocation();
-    // if (withouSidebarRoutes.some((item) => pathname.includes(item)))
-    //   return null;
+const Layout = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const hideNavbarRoutes = [
+    "/GenerateBill",
+    "/search",
+    "/upload",
+    "/edit-invoice"
+  ];
+
+  const shouldHideNavbar = hideNavbarRoutes.some((route) =>
+    location.pathname.startsWith(route)
+  );
+
+  const handleLogout = () => {
+    localStorage.removeItem("isLoggedIn");
+    navigate("/login");
+  };
+
   return (
     <>
-      <nav>
-        
-            {/* <Link to="/">Home | </Link> */}
-         
-            <Link to="/GenerateBill">Invoice | </Link>
-         
-            {/* <Link to="/upload">Upload|</Link> */}
+      {!shouldHideNavbar && (
+        <nav style={{ display: "flex", gap: "15px", alignItems: "center" }}>
+          <Link to="/GenerateBill">Invoice</Link>
+          <Link to="/search">Print Bill</Link>
 
-            <Link to="/search">Print Bill</Link>
-            
-        
-      </nav>
+          {/* LOGOUT BUTTON */}
+          <button
+            onClick={handleLogout}
+            style={{
+              cursor: "pointer",
+              color: "black",
+              backgroundColor: "red",
+            }}
+          >
+            Logout
+          </button>
+        </nav>
+      )}
 
       <Outlet />
     </>
-  )
+  );
 };
 
 export default Layout;
